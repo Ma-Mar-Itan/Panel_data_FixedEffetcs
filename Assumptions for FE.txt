@@ -1,0 +1,11 @@
+Assumptions Explained for FE
+    1. Strict Exogeneity of Regressors. Not correlated with the error 
+    2. Random Sampling Across Individuals
+    3. No Extreme Outliers (Finite Moments)
+    4. No Perfect Multicollinearity
+
+Assumptions Explained for CRE
+   1. Correlation Structure: The unobserved individual effects may be correlated with the observed independent variables. Yes
+   2. Error Independence: The errors ϵ​ are assumed to be independently and identically distributed (i.i.d.) with mean zero and constant variance. Use Driscoll-Kraay SEs
+   3. Time-Stationarity: The random effects, while correlated with explanatory variables, are assumed to be stable over time for a given entity.
+   4. Correct Specification: The model must correctly specify the functional form and include all relevant variables to avoid omitted-variable bias.
