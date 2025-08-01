@@ -1,5 +1,8 @@
 ##Reading data
-df <- read_excel("C://Users//malek//Desktop//Center of Applied Statistics//Qatar Sanctions//V 1.0//Qatar_v1.0.xlsx", sheet = "final")
+df <- read_excel("C://Users//malek//Desktop//Center of Applied Statistics//Qatar Sanctions//V 1.0//Qatar_project//Qatar_v1.0.xlsx", sheet = "final")
+df <- pdata %>%
+  filter(country %in% c("Saudi", "UAE", "Bahrain", "Egypt"))
+
 View(df)
 
 ##Preprocess data & transform to panel
@@ -121,6 +124,12 @@ summary(fe)
 re <- plm(ln_trade ~ ln_cti + ln_gdpc + distance + crises, data = pdata, index = c("country", "year"), model = "random")
 summary(re)
 
+#new RE
+re <- plm(ln_trade ~ ln_cti + ln_gdpc + distance + crises,
+          data = pdata,
+          index = c("country", "year"),
+          model = "random",
+          random.method = "walhus")
 
 ###Assumptions 
 ##Hausman Test (FE vs RE) → Tests for exogeneity of time-invariant regressors 

@@ -11,3 +11,5 @@ summary(model_cre)
 
 #Robust SE incase heteroskedasticity and cross correlation assumptions violated
 coeftest(model_cre, vcovSCC(fe, type = "HC1"))
+
+
